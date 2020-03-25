@@ -2,15 +2,8 @@
 
 namespace item07
 {
-    public class Tuples01
+    public class CTest
     {
-        static void Main(string[] args)
-        {
-        }
-
-        public T Transfrom<T>(T element, Func<T, T> transformFunc)
-        {
-            return transformFunc(element);
-        }
+        public (int Rise, int Run) aPoint = (5, 67);
     }
 }
