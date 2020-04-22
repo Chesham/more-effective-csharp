@@ -17,17 +17,12 @@ namespace more_effective_csharp_2nd_edition
                            where item.Temperature > 80
                            select item;
 
-            Assert.AreEqual(true, true);
-        }
+            WeatherData.PrintCollection(warmDays);
 
-        [TestMethod()]
-        public void Test02()
-        {
-            Employee _Employee;
-            //_Employee.Name = "aa";
-
-
-            Assert.AreEqual(true, true);
-        }
+            foreach (var o in warmDays)
+            {
+                Assert.IsTrue(o.WindSpeed <= 70);
+            }
+        }        
     }
 }

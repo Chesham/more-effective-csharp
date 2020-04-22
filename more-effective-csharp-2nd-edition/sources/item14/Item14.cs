@@ -5,10 +5,6 @@ namespace item14
 {
     public class Item14
     {
-        public string PrintMailingLabel(IContactInfo ic)
-        {
-            return ic.Name;
-        }
     }
 
     public enum Direction
@@ -32,6 +28,14 @@ namespace item14
         public Direction WindDirection { get; }
         public override string ToString() =>
             $@"Temperature={Temperature},Wind is {WindSpeed} mph from the {WindDirection}";
+
+        public static void PrintCollection<T>(IEnumerable<T> collection)
+        {
+            foreach (T o in collection)
+            {
+                Console.WriteLine($"Collection contains {o}");
+            }
+        }
     }
 
     public class WeatherDataStream : IEnumerable<WeatherData>
@@ -52,21 +56,8 @@ namespace item14
             }
         }
         public IEnumerator<WeatherData> GetEnumerator() => getElements();
+
         System.Collections.IEnumerator
             System.Collections.IEnumerable.GetEnumerator() => getElements();
     }
-
-
-    public interface IContactInfo
-    {
-        string Name { get;}
-    }
-
-    public class Employee : IContactInfo
-    {
-        public string Name => EmployeeName;
-        private string EmployeeName;
-    }
-
-    
 }
