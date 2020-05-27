@@ -41,7 +41,7 @@ namespace item18
     public class Circle : Shape
     {
         private double radius;
-        public void Update(double d)
+        public void Update(int d)
         {
             radius = d;
             area = 3.14 * radius * radius;
@@ -58,7 +58,7 @@ namespace item18
     {
         private double length;
         private double width;
-        public void Update(double length, double width)
+        public void Update(int length, int width)
         {
             this.length = length;
             this.width = width;
@@ -67,8 +67,8 @@ namespace item18
         }
         public void OnShapeChanged2(object sender, ShapeEventArgs e)
         {
-            e.newArea *= 3;
-            base.OnShapeChanged(e);
+            e.newArea *= 3; 
+            Area = e.newArea;
         }
     }
 }
