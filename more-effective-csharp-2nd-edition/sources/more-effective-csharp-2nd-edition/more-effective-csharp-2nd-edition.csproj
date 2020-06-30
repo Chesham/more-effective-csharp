@@ -45,6 +45,7 @@
     <ProjectReference Include="..\item28\item28.csproj" />
     <ProjectReference Include="..\item31\item31.csproj" />
     <ProjectReference Include="..\item32\item32.csproj" />
+    <ProjectReference Include="..\item33\item33.csproj" />
   </ItemGroup>
 
   <ItemGroup>
