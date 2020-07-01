@@ -56,7 +56,7 @@ namespace more_effective_csharp_2nd_edition
                 {
                     progresses.Add(args);
                 };
-                var target = new Coo { randomBoundaries = (0, (int)timeout.TotalMilliseconds * 2) };
+                var target = new Coo { randomBoundaries = ((int)timeout.TotalMilliseconds, (int)timeout.TotalMilliseconds) };
                 try
                 {
                     await target.foo(cts.Token, reporter);
@@ -77,7 +77,7 @@ namespace more_effective_csharp_2nd_edition
             var caughtException = default(OperationCanceledException);
             using (var cts = new CancellationTokenSource(timeout))
             {
-                var target = new Coo { randomBoundaries = (0, (int)timeout.TotalMilliseconds * 2) };
+                var target = new Coo { randomBoundaries = ((int)timeout.TotalMilliseconds, (int)timeout.TotalMilliseconds) };
                 try
                 {
                     await target.foo(cts.Token);
