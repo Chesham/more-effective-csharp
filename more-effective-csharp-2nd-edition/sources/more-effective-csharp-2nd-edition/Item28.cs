@@ -23,14 +23,14 @@ namespace more_effective_csharp_2nd_edition
             Assert.Fail("should not happen");
         }
 
-        [TestMethod, Ignore]
+        [TestMethod]
         public void TestReturnTask()
         {
             var timeout = TimeSpan.FromMilliseconds(10);
             Assert.ThrowsException<AggregateException>(() => item28.Item28.ReturnTask(timeout).Wait());
         }
 
-        [TestMethod, Ignore]
+        [TestMethod]
         public void TestOnEvent()
         {
             var target = new item28.TaskEvent();
