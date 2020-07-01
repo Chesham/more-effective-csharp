@@ -1,10 +1,10 @@
 node {
-    def hangoutsToken = 'Dz0ds-PEXCNW2X6ieYrRrPIEr'
+    def hangoutsToken = 'G0dA2D0cEFhg_4CoIZmUDt4yY'
     def verbose = false
-    def feedbackGitLab = true
+    def feedbackGitLab = false
 
     stage('checkout') {
-        git branch: 'master', credentialsId: 'gitscr1.moneydj.com', url: 'git@gitscr1.moneydj.com:XSKS/more-effective-csharp.git'
+        git branch: 'dev', url: '/d/Projects/git/gitscr1.moneydj.com/XSGroup/more-effective-csharp'
     }
     if (feedbackGitLab) {
         updateGitlabCommitStatus name: "${server}", state: 'pending'
