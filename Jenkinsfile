@@ -4,7 +4,7 @@ node {
     def feedbackGitLab = true
 
     stage('checkout') {
-        git branch: 'master', url: 'git@gitscr1.moneydj.com:XSKS/more-effective-csharp.git'
+        git branch: 'master', credentialsId: 'gitscr1.moneydj.com', url: 'git@gitscr1.moneydj.com:XSKS/more-effective-csharp.git'
     }
     if (feedbackGitLab) {
         updateGitlabCommitStatus name: "${server}", state: 'pending'
