@@ -10,7 +10,7 @@ namespace more_effective_csharp_2nd_edition
     [TestClass()]
     public class Item28
     {
-        [TestMethod()]
+        [TestMethod, Ignore]
         public void TestFireAndForget()
         {
             AppDomain.CurrentDomain.UnhandledException += (sender, e) =>
@@ -23,21 +23,21 @@ namespace more_effective_csharp_2nd_edition
             Assert.Fail("should not happen");
         }
 
-        [TestMethod()]
+        [TestMethod, Ignore]
         public void TestReturnTask()
         {
             var timeout = TimeSpan.FromMilliseconds(10);
             Assert.ThrowsException<AggregateException>(() => item28.Item28.ReturnTask(timeout).Wait());
         }
 
-        [TestMethod()]
+        [TestMethod, Ignore]
         public void TestOnEvent()
         {
             var target = new item28.TaskEvent();
             target.OnShapeChanged(new EventArgs());
         }
 
-        [TestMethod()]
+        [TestMethod, Ignore]
         public void TestOnEventStop()
         {
             var target = new item28.TaskEventStop();
