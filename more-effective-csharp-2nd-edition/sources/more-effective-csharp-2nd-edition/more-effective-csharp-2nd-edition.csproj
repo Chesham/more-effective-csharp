@@ -50,6 +50,7 @@
     <ProjectReference Include="..\item35\item35.csproj" />
     <ProjectReference Include="..\item36\item36.csproj" />
     <ProjectReference Include="..\item38\item38.csproj" />
+    <ProjectReference Include="..\item40\item40.csproj" />
   </ItemGroup>
 
   <ItemGroup>
